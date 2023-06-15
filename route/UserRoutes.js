@@ -6,8 +6,8 @@ import { addproduct } from "../Controllers/ProductControllers.js";
 const router=express.Router();
 
 router.post ('/register',register);
-router.post('/checksregister'/checksregister);
-router.post('/addproduct',addproduct)
+router.post('/checksregister',checksregister);
+router.post('/addproduct',checksregister,addproduct)
 
 
 export default router;

@@ -13,16 +13,18 @@ if(!password) return res.send("password is required");
 if(!pin) return res.send("pin is required");
 if(!role) return res.send("role is required");
 
-if(password.length<=8("password should be 8 digit")){
-    return res.send
+// if(password.length<=8("password should be 8 digit")){
+//     return res.send
 
-}
+// }
+const response =await Users.find({email}).exec();
+if(response.length) return res.send("email already exits")
 
 var secretkey ="crud";
 var plaintext= password;
 var ciphertext=encrypt.encrypt(plaintext,secretkey,256);
 
-var secretkeypin="operation";
+var secretkeypin="pin";
 var plaintextpin=pin;
 var ciphertextpin=encrypt.encrypt(plaintextpin,secretkeypin,256);
 
@@ -44,3 +46,5 @@ const user =new Users({
        return  res.send(error);
     }
 }
+
+

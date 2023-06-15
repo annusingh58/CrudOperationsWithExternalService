@@ -17,7 +17,7 @@ export const addproduct = async(req, res) =>{
         })
             .then(res=>res.json())
             .then(json=>console.log(json));
-            res.send(json);
+           return res.send({json});
     }
     catch(error){
         return res.send(error);

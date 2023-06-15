@@ -32,7 +32,7 @@ const user =new Users({
 
     name,
     email,
-    password:ciphertext,
+    password:plaintext,
     pin:ciphertextpin,
     role,
     

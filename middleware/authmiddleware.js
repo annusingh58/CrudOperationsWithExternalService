@@ -16,11 +16,11 @@ const response=await Users.find({_id}).exec();
 console.log(response,"find -id")
 
 
-if(response.length)
+if(!response.length)
     return res.send("id not found in middleware");
 
     var secretkeypin ="pin";
-    var decipher =encrypt.decrypt(response[0].pin.secretkeypin,256);
+    var decipher =encrypt.decrypt(response[0].pin,secretkeypin,256);
         if(decipher==pin){
             if(response[0].role=="seller"|| response[0].role=="admin"){
                 next();
@@ -34,7 +34,7 @@ if(response.length)
             return res.send("invalid pin ")
 
         }
-    console.log(role);
+    
 
  }
  catch(error){

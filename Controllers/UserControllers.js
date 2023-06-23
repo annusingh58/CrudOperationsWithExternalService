@@ -48,10 +48,5 @@ const user =new Users({
 }
 
 
-export const getProductbyId=async(req,res)=>{
-    const{id}=req.params;
-    try{
-        const response =await axios.get('${Products')
-    }
-}
+
 
